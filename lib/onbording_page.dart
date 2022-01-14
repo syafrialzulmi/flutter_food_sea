@@ -40,6 +40,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       body: Stack(
         children: <Widget>[
           PageView.builder(
@@ -61,34 +62,49 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Row(
-                        children:
-                            List<Widget>.generate(_page.length, (int index) {
-                      return AnimatedContainer(
-                        duration: Duration(milliseconds: 300),
-                        width: (index == _currentPage) ? 20 : 10,
-                        height: 10,
-                        margin: EdgeInsets.symmetric(horizontal: 2),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: (index == _currentPage)
-                              ? Theme.of(context).primaryColor
-                              : Theme.of(context).primaryColor.withAlpha(90),
-                        ),
-                      );
-                    })),
+                      children:
+                          List<Widget>.generate(_page.length, (int index) {
+                        return AnimatedContainer(
+                          duration: Duration(milliseconds: 300),
+                          width: (index == _currentPage) ? 20 : 10,
+                          height: 10,
+                          margin: EdgeInsets.symmetric(horizontal: 2),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: (index == _currentPage)
+                                ? Theme.of(context).primaryColor
+                                : Theme.of(context).primaryColor.withAlpha(90),
+                          ),
+                        );
+                      }),
+                    ),
                     Container(
-                      width: 40,
-                      height: 40,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Theme.of(context).primaryColor,
                       ),
-                      child: Icon(
-                        Icons.arrow_forward_rounded,
-                        color: Colors.white,
-                        size: 28.0,
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(10),
+                          onTap: () {},
+                          child: Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.transparent,
+                              // color: Theme.of(context).primaryColor,
+                            ),
+                            child: const Icon(
+                              Icons.arrow_forward_rounded,
+                              color: Colors.white,
+                              size: 28.0,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),

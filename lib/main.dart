@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_sea/onbording_page.dart';
+import 'package:flutter_food_sea/login_page.dart';
+// import 'package:flutter_food_sea/onbording_page.dart';
 // import 'package:flutter_food_sea/splash_page.dart';
 
 void main() {
@@ -17,13 +18,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'SeaFood Apps',
-      theme: ThemeData(
-        primaryColor: const Color(0xff3267E3),
-        fontFamily: 'SplineSans',
-      ),
-      home: const OnboardingPage(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'SeaFood Apps',
+        theme: ThemeData(
+          primaryColor: const Color(0xff3267E3),
+          backgroundColor: Colors.white,
+          fontFamily: 'SplineSans',
+        ),
+        home: const LoginPage());
   }
 }
