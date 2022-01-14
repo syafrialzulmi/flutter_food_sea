@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_sea/login_page.dart';
+import 'package:flutter_food_sea/home_page.dart';
+// import 'package:flutter_food_sea/login_page.dart';
 // import 'package:flutter_food_sea/onbording_page.dart';
 // import 'package:flutter_food_sea/splash_page.dart';
 
@@ -22,9 +23,8 @@ class _MyAppState extends State<MyApp> {
         title: 'SeaFood Apps',
         theme: ThemeData(
           primaryColor: const Color(0xff3267E3),
-          backgroundColor: Colors.white,
           fontFamily: 'SplineSans',
         ),
-        home: const LoginPage());
+        home: const HomePage());
   }
 }

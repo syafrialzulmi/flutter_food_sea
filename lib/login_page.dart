@@ -12,7 +12,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Colors.white,
       body: DefaultTabController(
         length: 2,
         child: Padding(
