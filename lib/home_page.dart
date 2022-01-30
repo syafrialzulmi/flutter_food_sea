@@ -218,15 +218,95 @@ class _HomePageState extends State<HomePage> {
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
                       children: myFoodPopular
-                          .map(
-                            (epopular) => Container(
-                              margin: EdgeInsets.all(5),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                            ),
-                          )
+                          .map((popular) => SizedBox(
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      elevation: 0,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: GridTile(
+                                          child: Image.asset(
+                                            popular['imagePopular'],
+                                            fit: BoxFit.cover,
+                                          ),
+                                          footer: SizedBox(
+                                            height: 70,
+                                            child: GridTileBar(
+                                              backgroundColor: Colors.white,
+                                              title: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    top: 5, bottom: 5),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      popular['namePopular'],
+                                                      maxLines: 2,
+                                                      style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color:
+                                                            Color(0xff082431),
+                                                      ),
+                                                    ),
+                                                    Row(
+                                                      children: const [
+                                                        Icon(
+                                                          Icons.star_outlined,
+                                                          color:
+                                                              Color(0xffFFBC58),
+                                                          size: 18,
+                                                        ),
+                                                        Icon(
+                                                          Icons.star_outlined,
+                                                          color:
+                                                              Color(0xffFFBC58),
+                                                          size: 18,
+                                                        ),
+                                                        Icon(
+                                                          Icons.star_outlined,
+                                                          color:
+                                                              Color(0xffFFBC58),
+                                                          size: 18,
+                                                        ),
+                                                        Icon(
+                                                          Icons.star_outlined,
+                                                          color:
+                                                              Color(0xffFFBC58),
+                                                          size: 18,
+                                                        ),
+                                                        Icon(
+                                                          Icons.star_outlined,
+                                                          color:
+                                                              Color(0xffFFBC58),
+                                                          size: 18,
+                                                        ),
+                                                      ],
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                              // Container(
+                              //   margin: EdgeInsets.all(5),
+                              //   decoration: BoxDecoration(
+                              //     color: Colors.white,
+                              //     borderRadius: BorderRadius.circular(20),
+                              //   ),
+                              //   child: GridTile(
+                              //     header: GridTileBar(),
+                              //     footer: GridTileBar(),
+                              //   ),
+                              // ),
+                              )
                           .toList(),
                     ),
                   ),
